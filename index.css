@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
+h1, h2, h3, h4, h5, h6, p, span, div, input, button{
+    font-family: 'Abel', sans-serif;
+    font-weight: 300;
+}
+
+body{
+    background-color: #484349;
+}
+
+#logo{
+    max-width: 80%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header{
+    color: #F7F0F0;
+    font-size: 53px;
+}
+
+#foi{
+    padding: 0 10% 0 0 ;
+    background: none;
+    border: none;
+}
+
+.input {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}
+
+.input input{
+    background: transparent;
+    border: none;
+    text-align: center;
+    font-size: 28px;
+    height: 40px;
+    max-width: 90%;
+    color: rgb(138, 243, 255);
+}
+
+.input input::placeholder{
+    color: rgba(138, 243, 255,0.7);
+}
+.input input:focus, .input button:active, .input button:focus{
+    outline: none;
+}
+
+.input{
+    background: rgba(24, 169, 153,0.115);
+    border-bottom: 1.5px solid rgb(138, 243, 255);
+}
+
+.lista {
+    margin: 30px;
+}
+
+.lista .input{
+    margin: 12px;
+    width: 78vw;
+    font-size: 25px;
+    color: rgb(138, 243, 255);
+}
+
+.lista .input button{
+    position: absolute;
+    right: 13.4vw;
+    background: transparent;
+    border: none;
+}
+
+#vai{
+    border: none;
+    color: rgb(138, 243, 255);
+    font-size: 32px;
+    width: 32vw;
+}
+
+#vai:focus{
+    outline: none;
+}
+
+.lista .input button:focus{
+    outline: none;
+}
