@@ -20,6 +20,8 @@ function Display(){
 
         span1.style.width = "24vw";
         span2.style.width = "24vw";
+        span1.style.color = `rgba(138, 243, 255,${0.35 + (Scores[id]/100)*0.65})`
+        span2.style.color = `rgba(138, 243, 255,${0.35 + (Scores[id]/100)*0.65})`
         span1.style.textAlign = "center";
         span2.style.textAlign = "center";
 
@@ -87,6 +89,15 @@ const init = function(){
                     Scores.splice(i,1);
                     Players.splice(i,1);
                     i-=1;
+                }
+            }
+
+            for(let i = 0; i < Players.length; i++){
+                for(let j = i; j < Players.length; j++){
+                    if(Scores[i] < Scores[j]){
+                        [Scores[i],Scores[j]] = [Scores[j],Scores[i]];
+                        [Players[i],Players[j]] = [Players[j],Players[i]];
+                    }
                 }
             }
 
