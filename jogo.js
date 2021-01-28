@@ -1,6 +1,7 @@
 var Players = null;
 var Scores = null;
 var View = null;
+var total = null;
 
 function Display(){
     let field = document.querySelector(".lista");
@@ -10,7 +11,7 @@ function Display(){
         id += 1;
         let div = document.createElement("div");
         div.classList.add("input");
-        div.style.background = `rgba(24, 169, 153, ${(Scores[id]/100)*0.2})`;
+        div.style.background = `rgba(24, 169, 153, ${(Scores[id]/total)*0.2})`;
 
         let span1 = document.createElement("div");
         let span2 = document.createElement("div");
@@ -20,8 +21,8 @@ function Display(){
 
         span1.style.width = "24vw";
         span2.style.width = "24vw";
-        span1.style.color = `rgba(138, 243, 255,${0.35 + (Scores[id]/100)*0.65})`
-        span2.style.color = `rgba(138, 243, 255,${0.35 + (Scores[id]/100)*0.65})`
+        span1.style.color = `rgba(138, 243, 255,${0.35 + (Scores[id]/total)*0.65})`
+        span2.style.color = `rgba(138, 243, 255,${0.35 + (Scores[id]/total)*0.65})`
         span1.style.textAlign = "center";
         span2.style.textAlign = "center";
 
@@ -59,11 +60,13 @@ function Monta(){
 }
 
 const init = function(){
-    Players = JSON.parse(localStorage.getItem("Players"));
-    Scores = new Array();
-    for(let i = 0; i < Players.length; i+=1) Scores.push(100);
+    let jogo_atual = JSON.parse(localStorage.getItem("jogo_atual"));
+    Players = jogo_atual.Players;
+    Scores = jogo_atual.Scores;
     View = 0;
     Display();
+
+    total = localStorage.getItem("valor_de_inicio");
 
     let lanca = document.querySelector("#lanca");
     lanca.addEventListener('click', () => {
@@ -101,6 +104,9 @@ const init = function(){
                 }
             }
 
+            let att_jogo = {Players, Scores};
+            localStorage.setItem("jogo_atual", JSON.stringify(att_jogo));
+
             if(Scores.length == 1){
                 field.innerHTML = "";
                 let para = document.createElement("h1");
@@ -119,6 +125,25 @@ const init = function(){
         }
     });
 
+    let reinicia = document.querySelector("#reinicia");
+    reinicia.addEventListener('click', () => {
+
+        Players = JSON.parse(localStorage.getItem("ultimo_gerado"));
+        Scores = new Array();
+        for(let i = 0; i < Players.length; i += 1)
+            Scores.push(total);
+        
+        let att_jogo = {Players, Scores};
+        localStorage.setItem("jogo_atual", JSON.stringify(att_jogo));
+
+        View = 0;
+        Display();
+    });
+
+    let home = document.querySelector("#home");
+    home.addEventListener('click', () => {
+        window.document.location = './index.html';
+    });
 
 }
 

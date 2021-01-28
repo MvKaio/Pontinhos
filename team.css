@@ -27,6 +27,12 @@ body{
     font-size: 53px;
 }
 
+#foi{
+    padding: 0 10% 0 0 ;
+    background: none;
+    border: none;
+}
+
 .input {
     display: flex;
     flex-direction: row;
@@ -45,6 +51,10 @@ body{
     color: rgb(138, 243, 255);
 }
 
+.time{
+    margin: 2vw;
+}
+
 .input input::placeholder{
     color: rgba(138, 243, 255,0.7);
 }
@@ -57,33 +67,35 @@ body{
     border-bottom: 1.5px solid rgb(138, 243, 255);
 }
 
-.lista {
+.lista, .lista_few {
     margin: 30px;
 }
 
-.lista .input{
+.lista .input, .lista_few .input{
     margin: 12px;
-    width: 70vw;
+    width: 78vw;
     font-size: 25px;
     color: rgb(138, 243, 255);
 }
 
-#lanca{
+.lista .input button, .lista_few .input button{
+    position: absolute;
+    right: 13.4vw;
+    background: transparent;
+    border: none;
+}
+
+#vai{
     border: none;
     color: rgb(138, 243, 255);
     font-size: 32px;
     width: 32vw;
-    margin-bottom: 10vw;
 }
 
-#reinicia, #home{
-    border: none;
-    color: rgb(138, 243, 255);
-    font-size: 32px;
-    width: 60vw;
-    margin: 2vw;
+#vai:focus{
+    outline: none;
 }
 
-#lanca:focus{
+.lista .input button:focus{
     outline: none;
 }

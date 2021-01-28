@@ -27,12 +27,6 @@ body{
     font-size: 53px;
 }
 
-#foi{
-    padding: 0 10% 0 0 ;
-    background: none;
-    border: none;
-}
-
 .input {
     display: flex;
     flex-direction: row;
@@ -63,35 +57,22 @@ body{
     border-bottom: 1.5px solid rgb(138, 243, 255);
 }
 
-.lista {
-    margin: 30px;
-}
-
-.lista .input{
-    margin: 12px;
-    width: 78vw;
-    font-size: 25px;
-    color: rgb(138, 243, 255);
-}
-
-.lista .input button{
-    position: absolute;
-    right: 13.4vw;
-    background: transparent;
-    border: none;
-}
-
-#vai{
+#classic, #team{
     border: none;
     color: rgb(138, 243, 255);
     font-size: 32px;
-    width: 32vw;
+    width: 60vw;
+    margin: 2vw;
 }
 
-#vai:focus{
+#classic:focus, #team:focus, #resume:focus{
     outline: none;
 }
 
-.lista .input button:focus{
-    outline: none;
+#resume{
+    border: none;
+    color: rgb(138, 243, 255);
+    font-size: 32px;
+    width: 80vw;
+    margin: 10vw;
 }
